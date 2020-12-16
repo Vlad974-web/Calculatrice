@@ -1,7 +1,7 @@
 // DOM
-const touches = [...document.querySelector('.bouton')];
+const touches = [...document.querySelectorAll('.bouton')];
 const listeKeycode = touches.map(touche => touche.dataset.key);
-const ecran = document.querySelector('.ecran');
+const ecran = document.querySelectorAll('.ecran');
 
 document.addEventListener('keydown', (e) => {
     const valeur = e.keyCode.toString();
@@ -33,3 +33,7 @@ const calculer = (valeur) => {
         }
     }
 }
+
+window.addEventListener('error', (e) => {
+    alert('Une erreur sur votre calcul : ' + e.message)
+})
