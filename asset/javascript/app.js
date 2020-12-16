@@ -1,31 +1,29 @@
 // DOM
 const touches = [...document.querySelectorAll('.bouton')];
 const listeKeycode = touches.map(touche => touche.dataset.key);
-const ecran = document.querySelectorAll('.ecran');
+const ecran = document.querySelector('.ecran');
 
 document.addEventListener('keydown', (e) => {
-    const valeur = e.keyCode.toString();
-    calculer(valeur);
-});
-
-document.addEventListener('click', (e) => {
-    const valeur = e.target.dataset.key;
-    calculer(valeur);
+    const valeur = e.keyCode.toString()
+    calculer(valeur)
 })
 
-const calculer = (valeur) => {
+document.addEventListener('click', (e) => {
+    const valeur = e.target.dataset.key
+    calculer(valeur)
+})
+
+function calculer(valeur) {
     if (listeKeycode.includes(valeur)) {
         switch(valeur) {
-    
             case '8':
                 ecran.textContent = '';
-                break;
-    
+            break;
             case '13':
                 const calcul = eval(ecran.textContent);
                 ecran.textContent = calcul;
-                break;
-
+            break;
+            
             default:
                 const indexKeycode = listeKeycode.indexOf(valeur);
                 const touche = touches[indexKeycode];
