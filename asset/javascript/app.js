@@ -1,7 +1,7 @@
 // DOM
-const touches = [...document.getElementsByClassName('bouton')];
+const touches = [...document.querySelector('.bouton')];
 const listeKeycode = touches.map(touche => touche.dataset.key);
-const ecran = document.getElementsByClassName('ecran');
+const ecran = document.querySelector('.ecran');
 
 document.addEventListener('keydown', (e) => {
     const valeur = e.keyCode.toString();
