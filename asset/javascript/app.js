@@ -13,7 +13,7 @@ document.addEventListener('click', (e) => {
     calculer(valeur)
 })
 
-function calculer(valeur) {
+const calculer = (valeur) => {
     if (listeKeycode.includes(valeur)) {
         switch(valeur) {
             case '8':
